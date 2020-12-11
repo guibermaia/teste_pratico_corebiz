@@ -1,0 +1,64 @@
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header input[type="text"] {
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+.content-div-header {
+    display: flex;
+    align-items: center;
+}
+.content-div-header p {
+    margin: 0 15px 0 0;
+}
+
+.carousel {
+    height: 300px;
+}
+
+.products {
+    display: flex;
+}
+
+.card-product {
+    background-color: black;
+    width: 200px;
+    height: 350px;
+}
+
+footer {
+    background-color: black;
+    color: #E5E5E5;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.div-trace {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+.content-div-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-div-footer button {
+    margin: 5px;
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
