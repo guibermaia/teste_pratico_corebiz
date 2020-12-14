@@ -112,7 +112,6 @@ function Home() {
     function getProducts() {
         Axios.get('https://corebiz-test.herokuapp.com/api/v1/products').then(result => {
             setProduct(result.data);
-            console.log(result)
         }).catch(err => {
             console.error(err);
         })
