@@ -6,5 +6,5 @@ ou npm install faz o download das bibliotecas que o React js necessita para roda
 # npm start
 depois digite o comando npm start para inicializar o projeto localmente, e poder rodar no seu navegador.
 
-#link projeto rodando.
+# link projeto rodando.
 https://teste-pratico-corebiz.herokuapp.com/
