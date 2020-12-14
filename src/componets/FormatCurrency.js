@@ -1,6 +1,10 @@
 export const SYMBOL_BRL = 'R$';
 
 export const format = (value, symbol) => {
-    const parsedValue = isNaN(value) ? 0 : parseFloat(value, 10);
-    return `${symbol} ${parsedValue.toFixed(2)}`;
+    const parsedValue = String(value).replace(/([0-9]{2})$/g, ",$1")
+    if (value.length > 6) {
+        console.log("batata")
+        parsedValue = String(value).replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+    }
+    return `${symbol} ${parsedValue}`;
 }
