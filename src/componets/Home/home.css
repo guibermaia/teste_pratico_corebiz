@@ -100,6 +100,7 @@ form {
 form input[type="text"] {
     padding: 15px;
     margin: 0 10px 0 0;
+    max-height: 49px;
 }
 form button {
     padding: 15px;
@@ -111,6 +112,11 @@ form button {
     outline: none;
     width: 130px;
     max-height: 49px;
+}
+.grid {
+    display: grid;
+    font-weight: bolder;
+    font-size: 18px;
 }
 footer {
     background-color: black;

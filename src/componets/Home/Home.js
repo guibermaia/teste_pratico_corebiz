@@ -43,13 +43,27 @@ const NewsForm = () => {
         },
         onSubmit: values => {
             if (formik) {
-                Axios.post('https://corebiz-test.herokuapp.com/api/v1/newsletter', values).then(res => {
-                }).catch(err => {
-                    console.log(err);
-                });
+                submit(values)
             }
         },
     });
+    var [cadastroNewsletter, setCadastroNewsletter] = useState("");
+
+
+    function submit(values) {
+        Axios.post('https://corebiz-test.herokuapp.com/api/v1/newsletter', values).then(res => {
+            console.log(res.data.message);
+            cadastroNewsletter = res.data.message;
+            if (cadastroNewsletter === "Created successfully") {
+                cadastroNewsletter = "Cadastrado com sucesso!";
+                setCadastroNewsletter(cadastroNewsletter);
+            }
+
+        }).catch(err => {
+            console.log(err);
+        });
+    }
+
     return (
         <form onSubmit={formik.handleSubmit}>
             <div>
@@ -63,7 +77,7 @@ const NewsForm = () => {
                 />
                 {formik.errors.name ? <div className="error">{formik.errors.name}</div> : null}
             </div>
-            <div>
+            <div className="grid">
                 <input
                     id="email"
                     name="email"
@@ -72,6 +86,7 @@ const NewsForm = () => {
                     value={formik.values.email}
                     placeholder="Digite seu email"
                 />
+                {cadastroNewsletter}
                 {formik.errors.email ? <div className="error">{formik.errors.email}</div> : null}
             </div>
             <button type="submit">EU QUERO!</button>
