@@ -18,6 +18,9 @@ import {
 import './home.css';
 import { SYMBOL_BRL, format } from '../FormatCurrency';
 
+import Carousel from '../Carousel/Carousel';
+import { SliderData } from '../Carousel/ImageData';
+
 const NewsForm = () => {
     const formik = useFormik({
         initialValues: {
@@ -41,7 +44,6 @@ const NewsForm = () => {
         onSubmit: values => {
             if (formik) {
                 Axios.post('https://corebiz-test.herokuapp.com/api/v1/newsletter', values).then(res => {
-                    console.log(res);
                 }).catch(err => {
                     console.log(err);
                 });
@@ -90,7 +92,7 @@ function Home() {
 
     function addCart() {
         var info = localStorage.getItem('cart');
-        if (!info || info == 0) {
+        if (!info || info === 0) {
             let quantity = qtdCart + 1;
             setQtdCart(quantity);
             localStorage.setItem('cart', quantity);
@@ -110,6 +112,7 @@ function Home() {
     function getProducts() {
         Axios.get('https://corebiz-test.herokuapp.com/api/v1/products').then(result => {
             setProduct(result.data);
+            console.log(result)
         }).catch(err => {
             console.error(err);
         })
@@ -134,7 +137,9 @@ function Home() {
                     </div>
                 </div>
             </header>
-            <div className="carousel"></div>
+            <div className="carousel">
+                <Carousel slides={SliderData} />
+            </div>
             <div className="products">
                 <MdChevronLeft className="size-svg" />
                 {product.map((item) => (
@@ -148,7 +153,6 @@ function Home() {
                 ))}
                 <MdChevronRight className="size-svg" />
             </div>
-
             <NewsForm />
 
             <footer>

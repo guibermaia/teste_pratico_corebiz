@@ -1,0 +1,55 @@
+.carousel {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel svg {
+    font-size: 36px;
+    z-index: 10;
+}
+
+.image {
+    width: 100%;
+    max-width: 1920px;
+    height: 400px;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 35%;
+    right: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 35%;
+    left: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
